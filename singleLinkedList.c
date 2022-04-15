@@ -192,6 +192,7 @@ void insertAtNode(int x, node *head, node *p) {
     tmp->next = p->next;
     p->next = tmp;
 
+    free(tmp);
 }
 
 void insertAtBeginning(int x, node *head) {
@@ -201,6 +202,7 @@ void insertAtBeginning(int x, node *head) {
 
     head->next = tmp;
 
+    free(tmp);
 
 }
 
@@ -231,10 +233,6 @@ node *findPrev(int x, node *head) {
 
     }
 
-
-//    while ( i != null && i->next->num != x) {
-//        i = i->next;
-//    }
 
 
     return i;
@@ -306,7 +304,6 @@ node *makeEmpty(node *head) {
 
 
 }
-
 
 
 
