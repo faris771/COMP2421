@@ -1,0 +1,98 @@
+
+char *s = "HI!";
+
+printf("%c",*s);
+*s : go that a ddress	
+
+printf("%c",s);
+s: contains the address
+
+- string is just char *, that points at the first character of the string, cuz by knowing the begining of the string we can iterate thro it till we reach '\0' which is always the end of the string 
+
+
+
+-string is  an array of chars, an array is a pointer points at the first element of that array
+
+- NULL: for pointers, \0 for chars
+
+
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+string s = "HI!";
+       printf("%c\n", s[0]);
+       printf("%c\n", s[1]);
+       printf("%c\n", s[2]);
+
+
+}
+
+- now we can use instead of string, char *s = "HI!"; here, s is a pointer, points on the address of the first element of "HI!", which is H's address
+
+- int main(void)
+{
+    char *s = "HI!";
+    printf("%c\n", *s);
+    printf("%c\n", *(s+1));
+    printf("%c\n", *(s+2));
+    printf("%c\n", *(s+3));
+}
+
+- from the two above exampls, we can figure out that '[]' is just a more readable symbol of *s, *(s+1), etc..
+
+- char *s = get_string("s: ");
+char *t = s;
+t[0] = toupper(t[0]);
+printf("s: %s\n", s);
+printf("t: %s\n", t);  // check shots!! two pointrs point on the same memory
+
+- malloc: malloc is function that is used to give us some certain meomry, we decide - in the parametr- how many byts we want, and when we finish using it, You MUST! free it, or u just after som time u'll run out of memory 
+
+- to understand more and more about pointers, check Binky!, cs50 lecture 4, 2020 , 1:36:00
+
+-    int *ptr = malloc(sizeof(int ));
+        the first '*' here is just to make it a pointer, (DOESN'T MEAN 'GO TO THAT ADDRESS!')
+
+    *ptr = 50;
+    // equivilent to :
+    int *ptr2;
+    ptr2 = malloc(sizeof (int ));
+    *ptr2 = 99;
+
+-  int main(void){
+    int *x;
+    int *y;
+    x = malloc(sizeof(int));
+    *x = 42;
+    *y = 13;
+    y = x;
+    *y = 13;
+}
+
+- malloc, uses memory in the heap, not in the stack, when u call function, memory in the 'stack' is used. check pics!
+
+- a Buffer, is just a chunk of memory   
+
+- when using 'realloc' u don't need to free the list, it handles it for u,
+	int *tmp = realloc(list, 4 * sizeof(int)) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
